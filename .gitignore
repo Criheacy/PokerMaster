@@ -1,0 +1,5 @@
+*.psd
+*.sln
+PokerMaster.*
+.vs/
+Env/
