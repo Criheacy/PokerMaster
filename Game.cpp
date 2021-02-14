@@ -1,5 +1,10 @@
 #include "Game.h"
 
+Game::Game()
+{
+
+}
+
 int randint(int i, int j)
 {
 	if (i < j) std::swap(i, j);
@@ -22,9 +27,4 @@ void Game::ShuffleCard()
 		// Swap index in cardset
 		std::swap(cardSet[i], cardSet[r]);
 	}
-}
-
-Game::Game()
-{
-
 }

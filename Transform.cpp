@@ -44,6 +44,13 @@ void Transform::Scale(double scale)
 	this->scale *= scale;
 }
 
+void Transform::SetTransform(TransformConfig tranConfig)
+{
+	MoveTo(tranConfig.x, tranConfig.y);
+	RotateTo(tranConfig.angle);
+	ScaleTo(tranConfig.scale);
+}
+
 int Transform::GetX()
 {
 	return x;
@@ -62,4 +69,9 @@ int Transform::GetAngle()
 int Transform::GetScale()
 {
 	return scale;
+}
+
+TransformConfig Transform::GetTransform()
+{
+	return { x, y, angle, scale };
 }
