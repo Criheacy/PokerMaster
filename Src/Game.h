@@ -30,7 +30,8 @@ public:
 
 	class SubGame* subGame;
 
-private:
-
 	std::vector<class Card*> cardSet;
+
+private:
+	void InitializeCards();
 };

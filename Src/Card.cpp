@@ -16,3 +16,8 @@ Card::Card(class CardValue value,
 	this->isSelected = isSelected;
 	this->isActive = isActive;
 }
+
+Card::~Card()
+{
+	this->value = NULL;
+}

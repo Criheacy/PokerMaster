@@ -39,11 +39,7 @@ void Renderer::RenderCard(class Card* card)
 	else
 		tileNumber = 41;
 
-	printf("%d, %d, %d, %.2lf, %.2lf\n", card->transform->GetX(), card->transform->GetY(),
-		tileNumber, card->transform->GetScale(), card->transform->GetAngle());
-
 	tTiledCard->RenderTile(card->transform->GetX() + 100, card->transform->GetY() + 100,
 		tileNumber, card->transform->GetScale() * 3, card->transform->GetAngle());
 
-	SDL_RenderPresent(mRenderer);
 }

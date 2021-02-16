@@ -82,16 +82,20 @@ int main(int argc, char** argv)
 	SDL_Renderer* mainRenderer = NULL;
 	Init(mainWindow, mainRenderer);
 
-//	Game* game = new Game();
-
-	CardValue cardValue = { CardNumber::MAJORJOKER, CardColor::None };
-	Card* testCard = new Card(cardValue);
+	Game* game = new Game();
 
 	Renderer* renderer = new Renderer(mainRenderer);
 
+	SDL_SetRenderDrawColor(mainRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(mainRenderer);
 
-	renderer->RenderCard(testCard);
+	for (auto it = game->cardSet.begin(); it != game->cardSet.end(); it++)
+	{
+		renderer->RenderCard(*it);
+		SDL_RenderPresent(mainRenderer);
+		SDL_RenderPresent(mainRenderer);
+	}
+	
 
 	// Enable Gizmo
 	gizmo->SetBrush(mainRenderer);
