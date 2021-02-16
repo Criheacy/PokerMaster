@@ -7,8 +7,5 @@ public:
 	Object();
 	Object(class Transform* transform);
 
-	Transform* GetTransform();
-
-protected:
 	Transform* transform;
 };

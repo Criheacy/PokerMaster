@@ -1,5 +1,13 @@
 #pragma once
 
+struct TransformConfig
+{
+	int x;
+	int y;
+	int angle;
+	double scale;
+};
+
 class Transform
 {
 public:
@@ -15,10 +23,14 @@ public:
 	void ScaleTo(double scale);
 	void Scale(double scale);
 
+	void SetTransform(TransformConfig tranConfig);
+
 	int GetX();
 	int GetY();
 	int GetAngle();
 	int GetScale();
+
+	TransformConfig GetTransform();
 
 private:
 	Object* attachedObject;

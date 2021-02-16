@@ -42,8 +42,8 @@ public:
 class Card : public Object
 {
 public:
-	Card(class Transform* transform, class CardValue value,
-		bool isFlipped = false, bool isSelected = false, bool isActive = true);
+	Card(class CardValue value, bool isFlipped = false,
+		bool isSelected = false, bool isActive = true);
 	~Card();
 
 	CardValue* value;
