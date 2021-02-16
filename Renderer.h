@@ -4,6 +4,7 @@
 #include "LFont.h"
 #include "Sprite.h"
 #include "Settings.h"
+#include "Card.h"
 
 class Renderer
 {
@@ -12,16 +13,10 @@ public:
 	~Renderer();
 
 	void RenderGame(class Game* game);
+	void RenderCard(class Card* card);
 
 private:
+
 	SDL_Renderer* mRenderer;
-
-	LTexture* tRedNumber;
-	LTexture* tBlackNumber;
-
-	LTexture* tMajorJoker;
-	LTexture* tMinorJoker;
-
-	LTexture* tColor;
-	LTexture* tCard;
+	LTexture* tTiledCard;
 };

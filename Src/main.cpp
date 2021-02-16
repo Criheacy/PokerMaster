@@ -8,7 +8,8 @@
 #include <SDL_ttf.h>
 
 #include "Game.h"
-#include "Renderer.h"
+#include "/Projects/2021-2-13 升级扑克牌游戏/PokerMaster/Card.h"
+#include "/Projects/2021-2-13 升级扑克牌游戏/PokerMaster/Renderer.h"
 
 #include "Gizmo.h"
 #include "Settings.h"
@@ -80,9 +81,13 @@ int main(int argc, char** argv)
 	SDL_Renderer* mainRenderer = NULL;
 	Init(mainWindow, mainRenderer);
 
-	Game* game = new Game();
-	Renderer* renderer = new Renderer();
-	renderer->Initialize(mainRenderer);
+//	Game* game = new Game();
+
+	CardValue cardValue = { CardNumber::J, CardColor::Heart };
+	Card* testCard = new Card(cardValue);
+
+	Renderer* renderer = new Renderer(mainRenderer);
+	renderer->RenderCard(testCard);
 
 	// Enable Gizmo
 	gizmo->SetBrush(mainRenderer);
@@ -110,7 +115,7 @@ int main(int argc, char** argv)
 			}
 		}
 
-		renderer->RenderGame(game);
+//		renderer->RenderGame(game);
 	}
 
 	Close(mainWindow, mainRenderer);

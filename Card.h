@@ -34,8 +34,6 @@ class CardValue
 {
 public:
 	CardValue(CardNumber number, CardColor color);
-	// TODO: Implement a Clonable Constructor
-
 
 	CardNumber number;
 	CardColor color;
@@ -44,8 +42,8 @@ public:
 class Card : public Object
 {
 public:
-	Card(class Transform* transform, class CardValue value,
-		bool isFlipped = false, bool isSelected = false, bool isActive = true);
+	Card(class CardValue value, bool isFlipped = false,
+		bool isSelected = false, bool isActive = true);
 	~Card();
 
 	CardValue* value;

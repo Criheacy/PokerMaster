@@ -8,10 +8,9 @@ const int SCREEN_HEIGHT = 600;
 const double GROUND_SCALE = 2;
 
 // where is the map from
-const std::string TEX_NUMBER_PATH = "Assets/numbers.png";
-const std::string TEX_COLOR_PATH = "Assets/colors.png";
-const std::string TEX_CARD_PATH = "Assets/card.png";
-const std::string TEX_JOKER_PATH = "Assets/joker.png";
+const std::string TEX_TILED_CARD_PATH = "Assets/Cards/TiledCards.png";
+const int TEX_TILED_CARD_TILEWIDTH = 33;
+const int TEX_TILED_CARD_TILEHEIGHT = 50;
 
 // These are how many pixels in a tile of raw texture
 const int WALL_WIDTH = 8;
