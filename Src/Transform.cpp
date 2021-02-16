@@ -1,6 +1,6 @@
 #include "Transform.h"
 
-Transform::Transform(Object* obj, int x, int y, int angle, double scale)
+Transform::Transform(Object* obj, int x, int y, double angle, double scale)
 {
 	attachedObject = obj;
 
@@ -22,16 +22,14 @@ void Transform::Move(int x, int y)
 	this->y += y;
 }
 
-void Transform::RotateTo(int angle)
+void Transform::RotateTo(double angle)
 {
 	this->angle = angle;
-	this->angle %= 360;
 }
 
-void Transform::Rotate(int angle)
+void Transform::Rotate(double angle)
 {
 	this->angle += angle;
-	this->angle %= 360;
 }
 
 void Transform::ScaleTo(double scale)
@@ -61,12 +59,12 @@ int Transform::GetY()
 	return y;
 }
 
-int Transform::GetAngle()
+double Transform::GetAngle()
 {
 	return angle;
 }
 
-int Transform::GetScale()
+double Transform::GetScale()
 {
 	return scale;
 }

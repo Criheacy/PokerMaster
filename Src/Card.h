@@ -3,7 +3,7 @@
 
 enum CardNumber
 {
-	None = 0,
+	NA = 0,
 	A = 1,
 	N2 = 2,
 	N3 = 3,

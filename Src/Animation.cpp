@@ -78,8 +78,8 @@ double Animation::CalculateRate(double timeRate, Transition transition, double t
 
 void Animation::UpdateTransform(double rate)
 {
-	double x = animConfig.startTransform.x * (1 - rate) + animConfig.startTransform.x * rate;
-	double y = animConfig.startTransform.y * (1 - rate) + animConfig.startTransform.y * rate;
+	int x = animConfig.startTransform.x * (1 - rate) + animConfig.startTransform.x * rate;
+	int y = animConfig.startTransform.y * (1 - rate) + animConfig.startTransform.y * rate;
 	double angle = animConfig.startTransform.angle * (1 - rate) + animConfig.startTransform.angle * rate;
 	double scale = animConfig.startTransform.scale * (1 - rate) + animConfig.startTransform.scale * rate;
 	

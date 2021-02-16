@@ -21,9 +21,9 @@ void Game::ShuffleCard()
 	{
 		int r = randint(i, setLength - 1);
 		// Swap object transform
-		temp = cardSet[i].transform;
-		cardSet[i].transform = cardSet[r].transform;
-		cardSet[r].transform = temp;
+		temp = cardSet[i]->transform;
+		cardSet[i]->transform = cardSet[r]->transform;
+		cardSet[r]->transform = temp;
 		// Swap index in cardset
 		std::swap(cardSet[i], cardSet[r]);
 	}

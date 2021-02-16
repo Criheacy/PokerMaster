@@ -8,8 +8,8 @@
 #include <SDL_ttf.h>
 
 #include "Game.h"
-#include "/Projects/2021-2-13 升级扑克牌游戏/PokerMaster/Card.h"
-#include "/Projects/2021-2-13 升级扑克牌游戏/PokerMaster/Renderer.h"
+#include "Card.h"
+#include "Renderer.h"
 
 #include "Gizmo.h"
 #include "Settings.h"
@@ -33,13 +33,14 @@ bool Init(SDL_Window*& mainWindow, SDL_Renderer*& mainRenderer)
 		printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
 		return false;
 	}
-	SDL_Surface* iconSurface = IMG_Load("Assets/icon.png");
+
+	/*SDL_Surface* iconSurface = IMG_Load("Assets/icon.png");
 	if (iconSurface == NULL)
 	{
 		printf("Unable to load image %s! SDL_image Error: %s\n", "Assets/icon.png", IMG_GetError());
 		return false;
 	}
-	SDL_SetWindowIcon(mainWindow, iconSurface);
+	SDL_SetWindowIcon(mainWindow, iconSurface);*/
 
 	//Create renderer for window
 	mainRenderer = SDL_CreateRenderer(mainWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
@@ -83,10 +84,13 @@ int main(int argc, char** argv)
 
 //	Game* game = new Game();
 
-	CardValue cardValue = { CardNumber::J, CardColor::Heart };
+	CardValue cardValue = { CardNumber::MAJORJOKER, CardColor::None };
 	Card* testCard = new Card(cardValue);
 
 	Renderer* renderer = new Renderer(mainRenderer);
+
+	SDL_RenderClear(mainRenderer);
+
 	renderer->RenderCard(testCard);
 
 	// Enable Gizmo

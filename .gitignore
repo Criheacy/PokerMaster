@@ -5,3 +5,5 @@ PokerMaster.*
 Env/
 x64/
 x86/
+Debug/
+Release/

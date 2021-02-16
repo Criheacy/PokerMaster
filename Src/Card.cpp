@@ -10,8 +10,7 @@ Card::Card(class CardValue value,
 	bool isFlipped, bool isSelected, bool isActive) :
 	Object {}
 {
-	this->value->color = value.color;
-	this->value->number = value.number;
+	this->value = new CardValue(value.number, value.color);
 
 	this->isFlipped = isFlipped;
 	this->isSelected = isSelected;
